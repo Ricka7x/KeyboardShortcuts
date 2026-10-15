@@ -41,7 +41,7 @@ public enum KeyboardShortcuts {
 	/**
 	When `true`, event handlers will not be called for registered keyboard shortcuts.
 	*/
-	static var isPaused = false
+	public static var isPaused = false
 
 	/**
 	Enable/disable monitoring of all keyboard shortcuts.
@@ -633,6 +633,6 @@ extension KeyboardShortcuts {
 }
 
 extension Notification.Name {
-	static let shortcutByNameDidChange = Self("KeyboardShortcuts_shortcutByNameDidChange")
+	public static let shortcutByNameDidChange = Self("KeyboardShortcuts_shortcutByNameDidChange")
 }
 #endif

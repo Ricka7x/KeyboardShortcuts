@@ -351,6 +351,6 @@ extension KeyboardShortcuts {
 }
 
 extension Notification.Name {
-	static let recorderActiveStatusDidChange = Self("KeyboardShortcuts_recorderActiveStatusDidChange")
+	public static let recorderActiveStatusDidChange = Self("KeyboardShortcuts_recorderActiveStatusDidChange")
 }
 #endif
