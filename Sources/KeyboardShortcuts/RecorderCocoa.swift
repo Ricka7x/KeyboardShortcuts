@@ -230,11 +230,13 @@ extension KeyboardShortcuts {
 				let clickPoint = convert(event.locationInWindow, from: nil)
 				let clickMargin = 3.0
 
-				if
-					event.type == .leftMouseUp || event.type == .rightMouseUp,
-					!bounds.insetBy(dx: -clickMargin, dy: -clickMargin).contains(clickPoint)
-				{
-					blur()
+				if event.type == .leftMouseUp || event.type == .rightMouseUp {
+					if !bounds.insetBy(dx: -clickMargin, dy: -clickMargin).contains(clickPoint) {
+						blur()
+					}
+
+					// Always pass mouse-ups through. `NSSearchFieldCell` completes the clear button's
+					// action on mouseUp, so swallowing a click inside the field makes it a no-op.
 					return event
 				}
 
